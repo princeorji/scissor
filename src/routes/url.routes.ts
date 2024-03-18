@@ -1,4 +1,5 @@
 import express from 'express'
+import limiter from '../middleware/rateLimit'
 import {
     shortenUrl,
     getShortUrl,
@@ -10,11 +11,11 @@ import {
 
 const routes = express.Router()
 
-routes.post('/shorten', shortenUrl)
+routes.post('/shorten', limiter, shortenUrl)
 
 routes.get('/:shortUrl', getShortUrl)
 
-routes.post('/custom', customUrl)
+routes.post('/custom', limiter, customUrl)
 
 routes.get('/qr/:shortUrl', generateQR)
 
