@@ -1,0 +1,49 @@
+openapi: 3.0.0
+info:
+  title: Thunder Client Collection
+  description: Converted from Thunder Client collection
+  version: 1.1
+servers:
+  - url: http://localhost:4040
+paths:
+  /urls/shorten:
+    post:
+      summary: Shorten URL
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                originalUrl:
+                  type: string
+              required:
+                - originalUrl
+      responses:
+        '200':
+          description: URL shortened successfully
+  /urls/tfasb_jvK:
+    get:
+      summary: Get short URL
+      responses:
+        '200':
+          description: Short URL found
+  /urls/qr/tfasb_jvK:
+    get:
+      summary: Generate QR code for short URL
+      responses:
+        '200':
+          description: QR code generated successfully
+  /urls/analytics/tfasb_jvK:
+    get:
+      summary: Get analytics for short URL
+      responses:
+        '200':
+          description: Analytics retrieved successfully
+  /urls:
+    get:
+      summary: Get link history
+      responses:
+        '200':
+          description: Link history retrieved successfully
