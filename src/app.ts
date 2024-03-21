@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express'
 import connectdb from './config/mongodb'
 import bodyParser from 'body-parser'
 import dotenv from 'dotenv'
+import path from 'path'
 
 dotenv.config()
 
@@ -15,8 +16,11 @@ connectdb()
 app.use(bodyParser.json())
 app.use('/urls', urlRoutes)
 
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')))
+
 app.get('/', (req: Request, res: Response) => {
-    res.send('Hello World!')
+    res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
 app.listen(port, () => {

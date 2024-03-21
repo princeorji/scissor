@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scissor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Scissor</h1>
+
+    <!-- Shorten URL Form -->
+    <form id="shortenUrlForm">
+        <input type="text" id="originalUrlInput" placeholder="Enter URL to shorten">
+        <button type="submit">Shorten URL</button>
+    </form>
+
+    <!-- Display Shortened URL -->
+    <div id="shortenedUrl"></div>
+
+    <!-- Get Original URL from Shortened URL -->
+    <div id="originalUrlContainer"></div>
+
+    <!-- Generate QR Code -->
+    <input type="text" id="shortUrlInput" placeholder="Enter Short URL">
+    <button id="generateQRButton">Generate QR Code</button>
+    <div id="qrCodeContainer"></div>
+
+    <!-- Link History -->
+    <h2>Link History</h2>
+    <ul id="linkHistory"></ul>
+
+    <!-- Get Analytics -->
+    <input type="text" id="analyticsShortUrlInput" placeholder="Enter Short URL">
+    <button id="getAnalyticsButton">Get Analytics</button>
+    <div id="analyticsResult"></div>
+
+    <!-- Include the script.js file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
